@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lock On Off</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: #000;
+        }
+
+        .container {
+            width: 500px;
+
+            background-color: #0086b3;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+
+        }
+
+        #lock {
+            width: 200px;
+            margin: 20px;
+            display: block;
+
+        }
+
+        .heading {
+
+            font-size: 24px;
+            text-align: center;
+
+        }
+
+        .btn {
+            border-radius: 10px;
+            padding-top: 20px;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .btn-open {
+            background-color: #e6b800;
+        }
+
+        .btn-close {
+            background-color:
+                #ffb3ff;
+        }
+    </style>
+</head>
+
+<body id="body">
+
+    <div class="container" id="container">
+        <h1 class="heading" id="heading">Lock</h1>
+        <img src="lock.png" alt="" id="img">
+        <div class="btn-group">
+
+            <button type="button" class="btn btn-close" onclick="toggleMode(close)">Close</button>
+            <button type="button" class="btn btn-open" onclick="toggleMode('open')">Open</button>
+        </div>
+
+    </div>
+    <script>
+        
+        function toggleMode(mode) {
+            
+            const lockImgElement = document.getElementById('img');
+            const bodyElement = document.getElementById('body');
+            const containerElement = document.getElementById('container');
+            const headingElement = document.getElementById('heading');
+
+            if (mode == 'open') {
+                lockImgElement.src = 'openlock.png';
+                headingElement.textContent = 'Unlock';
+                containerElement.style.backgroundColor = ' #33ffff'
+                bodyElement.style.backgroundColor = '#fff';
+            }
+             else {
+                lockImgElement.src = 'lock.png';
+                headingElement.textContent = 'Lock';
+                containerElement.style.backgroundColor = '#804000';
+                bodyElement.style.backgroundColor = '#000';
+            }
+        }
+
+        
+    </script>
+</body>
+
+</html>
